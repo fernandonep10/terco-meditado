@@ -1,7 +1,7 @@
 import React from "react";
 import { View, ImageBackground, Text, StyleSheet } from "react-native";
-import OracaoAtual from "./OracaoAtual/OracaoAtual";
-import TituloOracao from "./TituloOracao/TituloOracao";
+import OracaoAtual from "../../components/OracaoAtual/OracaoAtual";
+import TituloOracao from "../../components/TituloOracao/TituloOracao";
 import styles from "./AlvoMeditacaoEstilo";
 
 export default function AlvoMeditacao() {
