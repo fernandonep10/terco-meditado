@@ -12,9 +12,9 @@ const styles = StyleSheet.create({
   },
   smallComponent: {
     flex: 2, // 30% da tela
-    backgroundColor: "lightcoral", // Apenas para visualização
     justifyContent: "center", // Centraliza o texto verticalmente
     alignItems: "center", // Centraliza o texto horizontalmente
+    backgroundColor: "rgba(0, 0, 0, 1)", // Fundo branco com 50% de transparência
   },
 });
 

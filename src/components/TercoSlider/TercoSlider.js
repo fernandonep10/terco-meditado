@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
-import styles from "./OracaoAtualEstilo";
+import styles from "./TercoSliderEstilo";
 
 export default function OracaoAtual() {
   return (

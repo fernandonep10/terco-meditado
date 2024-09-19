@@ -1,5 +1,5 @@
 import * as SQLite from "expo-sqlite";
-import createAndPopulateTables from "./setupdatabase";
+import createAndPopulateTables from "./setupdatabaseResumido";
 
 let db = null;
 
