@@ -9,6 +9,11 @@ const createAndPopulateTables = async (db) => {
     
             -- Criando as Tabelas
 
+            DROP TABLE IF EXISTS tercosMisteriosOracaoes;
+            DROP TABLE IF EXISTS oracoes;
+            DROP TABLE IF EXISTS tercosMisterios;
+            DROP TABLE IF EXISTS tercos;
+            DROP TABLE IF EXISTS rosarios;
               
             CREATE TABLE IF NOT EXISTS rosarios (
             id integer PRIMARY KEY NOT NULL,
@@ -39,7 +44,8 @@ const createAndPopulateTables = async (db) => {
             id integer PRIMARY KEY NOT NULL,
             title TEXT,
             oracao TEXT,
-            tempo TEXT
+            tempo TEXT,
+            icone TEXT
             );
    
             CREATE TABLE IF NOT EXISTS tercosMisteriosOracaoes (
@@ -110,12 +116,12 @@ const createAndPopulateTables = async (db) => {
             
             
             -- Inserindo dados na tabela oracoes
-            INSERT INTO oracoes (title, oracao, tempo) VALUES 
-            ('Ave Maria', 'Ave Maria', '15 segundos'),
-            ('Pai Nosso', 'Pai Nosso', '25 segundos'),
-            ('Glória ao Pai', 'Glória ao Pai', '20 segundos'),
-            ('Salve Rainha', 'Infinitas graças', '55 segundos'),
-            ('Credo Apostólico', 'Creio em Deus Pai Todo-poderoso', '40 segundos');            
+            INSERT INTO oracoes (title, oracao, tempo, icone) VALUES 
+            ('Ave Maria', 'Ave Maria', '15 segundos', '../../../assets/images/contaAveMaria.png'),
+            ('Pai Nosso', 'Pai Nosso', '25 segundos', '../../../assets/images/contaAveMaria.png'),
+            ('Glória ao Pai', 'Glória ao Pai', '20 segundos', '../../../assets/images/contaAveMaria.png'),
+            ('Salve Rainha', 'Infinitas graças', '55 segundos', '../../../assets/images/contaAveMaria.png'),
+            ('Credo Apostólico', 'Creio em Deus Pai Todo-poderoso', '40 segundos', '../../../assets/images/contaAveMaria.png');            
 
             -- Inserindo dados na tabela tercosMisterios - Agradecimento
             INSERT INTO tercosMisterios (title, descricao, imagem, tercosId) VALUES 

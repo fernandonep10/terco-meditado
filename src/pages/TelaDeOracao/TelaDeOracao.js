@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, Button } from "react-native";
-import AlvoMeditacao from "../AlvoMeditacao/AlvoMeditacao";
-import OracaoAtual from "../../components/OracaoAtual/OracaoAtual";
-import PlayerDaOracao from "../../components/PlayerDaOracao/PlayerDaOracao";
+import AlvoMeditacao from "../../components/AlvoMeditacao/AlvoMeditacao";
+import ControleDaOracao from "../../components/ControleDaOracao/ControleDaOracao";
 import styles from "./TelaDeOracaoEstilo";
 import { useDatabase } from "../../context/DatabaseContext";
 import { fetchRosarioDetalhe } from "../../api/services/DetalhesRosario";
@@ -19,7 +18,6 @@ export default function TelaDeOracao({ route }) {
       if (db) {
         try {
           const resultado = await fetchRosarioDetalhe(db, idRosario);
-          //console.log("Resultado da busca do rosário:", resultado);
           setRosario(resultado);
 
           // Inicializa com o primeiro terço e primeiro mistério automaticamente
@@ -71,9 +69,11 @@ export default function TelaDeOracao({ route }) {
       </View>
 
       <View style={styles.smallComponent}>
-        <OracaoAtual />
-        <PlayerDaOracao />
-        <Button title="Próximo Mistério" onPress={proximoMisterioOuTerco} />
+        <ControleDaOracao
+          proximoMisterioOuTerco={proximoMisterioOuTerco}
+          misterioAtual={misterio}
+          tercoAtual={terco}
+        />
       </View>
     </View>
   );

@@ -16,7 +16,7 @@ export const fetchRosarioDetalhe = async (db, rosarioId) => {
           terco.id
         );
         for (let misterio of misterios) {
-          queryInfoOracoesMisterios = `SELECT o.title, o.oracao, o.tempo, o.id from tercosMisteriosOracaoes tmo join tercosMisterios tm on tmo.tercosMisteriosId = tm.id join oracoes o on tmo.oracoesId = o.id where tm.id = ?;`;
+          queryInfoOracoesMisterios = `SELECT o.title, o.oracao, o.tempo, o.id, o.icone from tercosMisteriosOracaoes tmo join tercosMisterios tm on tmo.tercosMisteriosId = tm.id join oracoes o on tmo.oracoesId = o.id where tm.id = ?;`;
           const oracaoesMisterios = await db.getAllAsync(
             queryInfoOracoesMisterios,
             misterio.id

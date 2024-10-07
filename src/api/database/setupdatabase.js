@@ -9,6 +9,12 @@ const createAndPopulateTables = async (db) => {
     
             -- Criando as Tabelas
 
+            DROP TABLE IF EXISTS tercosMisteriosOracaoes;
+            DROP TABLE IF EXISTS oracoes;
+            DROP TABLE IF EXISTS tercosMisterios;
+            DROP TABLE IF EXISTS tercos;
+            DROP TABLE IF EXISTS rosarios;
+
               
             CREATE TABLE IF NOT EXISTS rosarios (
             id integer PRIMARY KEY NOT NULL,
@@ -39,7 +45,8 @@ const createAndPopulateTables = async (db) => {
             id integer PRIMARY KEY NOT NULL,
             title TEXT,
             oracao TEXT,
-            tempo TEXT
+            tempo TEXT,
+            icone TEXT
             );
    
             CREATE TABLE IF NOT EXISTS tercosMisteriosOracaoes (
@@ -110,12 +117,12 @@ const createAndPopulateTables = async (db) => {
             
             
             -- Inserindo dados na tabela oracoes
-            INSERT INTO oracoes (title, oracao, tempo) VALUES 
-            ('Ave Maria', 'Ave Maria, cheia de graça, o Senhor é convosco. Bendita sois Vós entre as mulheres, bendito é o fruto de Vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós, pecadores, agora e na hora de nossa morte. Amém. ', '15 segundos'),
-            ('Pai Nosso', 'Pai Nosso, que estais no céu, santificado seja o Vosso Nome, venha a nós o Vosso Reino, seja feita a Vossa Vontade, assim na terra como no céu. O pão nosso de cada dia nos dai hoje, perdoai-nos as nossas ofensas, assim como nós perdoamos a quem nos tenha ofendido. E não nos deixeis cair em tentação, mas livrai-nos do mal. Amém.', '25 segundos'),
-            ('Glória ao Pai', 'Glória ao Pai, ao Filho e ao Espírito Santo. Como era no princípio, agora e sempre. Amém. Ó meu Jesus, perdoai-nos, livrai-nos do fogo do inferno, levai as almas todas para o céu e socorrei principalmente as que mais precisarem da Vossa misericórdia.', '20 segundos'),
-            ('Salve Rainha', 'Infinitas graças vos damos, ó Soberana Rainha, pelos benefícios que todos os dias recebemos de vossas mãos maternais. Dignai-vos, agora e para sempre tomar-nos debaixo do vosso poderoso amparo e para mais vos agradecer, vos saudamos com uma Salve Rainha: Salve Rainha, Mãe de misericórdia, vida, doçura, esperança nossa, salve! A vós bradamos os degredados filhos de Eva, a vós suspiramos, gemendo e chorando neste vale de lágrimas. Eia, pois, Advogada nossa, esses vossos olhos misericordiosos a nós volvei, e depois deste desterro, mostrai-nos Jesus, bendito fruto do vosso ventre. Ó clemente, ó piedosa, ó doce e sempre Virgem Maria. Rogai por nós Santa Mãe de Deus. Para que sejamos dignos das promessas de Cristo. Amém.', '55 segundos'),
-            ('Credo Apostólico', 'Creio em Deus Pai Todo-poderoso, criador do céu e da terra. E em Jesus Cristo, seu único filho, nosso Senhor, que foi concebido pelo poder do Espírito Santo; nasceu da Virgem Maria; padeceu sob Pôncio Pilatos, foi crucificado morto e sepultado; desceu à mansão dos mortos, ressuscitou ao terceiro dia; subiu aos céus, está sentado à direita de Deus Pai, Todo-poderoso, de onde há de vir a julgar os vivos e os mortos. Creio no Espírito Santo, na Santa Igreja Católica, na comunhão dos Santos, na remissão dos pecados, na ressurreição da carne, na vida eterna. Amém.', '40 segundos');            
+            INSERT INTO oracoes (title, oracao, tempo, icone) VALUES 
+            ('Ave Maria', 'Ave Maria, cheia de graça, o Senhor é convosco. Bendita sois Vós entre as mulheres, bendito é o fruto de Vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós, pecadores, agora e na hora de nossa morte. Amém. ', '15 segundos', '../../../assets/images/contaAveMaria.png'),
+            ('Pai Nosso', 'Pai Nosso, que estais no céu, santificado seja o Vosso Nome, venha a nós o Vosso Reino, seja feita a Vossa Vontade, assim na terra como no céu. O pão nosso de cada dia nos dai hoje, perdoai-nos as nossas ofensas, assim como nós perdoamos a quem nos tenha ofendido. E não nos deixeis cair em tentação, mas livrai-nos do mal. Amém.', '25 segundos', '../../../assets/images/contaAveMaria.png//'),
+            ('Glória ao Pai', 'Glória ao Pai, ao Filho e ao Espírito Santo. Como era no princípio, agora e sempre. Amém. Ó meu Jesus, perdoai-nos, livrai-nos do fogo do inferno, levai as almas todas para o céu e socorrei principalmente as que mais precisarem da Vossa misericórdia.', '20 segundos', '../../../assets/images/contaAveMaria.png'),
+            ('Salve Rainha', 'Infinitas graças vos damos, ó Soberana Rainha, pelos benefícios que todos os dias recebemos de vossas mãos maternais. Dignai-vos, agora e para sempre tomar-nos debaixo do vosso poderoso amparo e para mais vos agradecer, vos saudamos com uma Salve Rainha: Salve Rainha, Mãe de misericórdia, vida, doçura, esperança nossa, salve! A vós bradamos os degredados filhos de Eva, a vós suspiramos, gemendo e chorando neste vale de lágrimas. Eia, pois, Advogada nossa, esses vossos olhos misericordiosos a nós volvei, e depois deste desterro, mostrai-nos Jesus, bendito fruto do vosso ventre. Ó clemente, ó piedosa, ó doce e sempre Virgem Maria. Rogai por nós Santa Mãe de Deus. Para que sejamos dignos das promessas de Cristo. Amém.', '55 segundos','../../../assets/images/contaAveMaria.png'),
+            ('Credo Apostólico', 'Creio em Deus Pai Todo-poderoso, criador do céu e da terra. E em Jesus Cristo, seu único filho, nosso Senhor, que foi concebido pelo poder do Espírito Santo; nasceu da Virgem Maria; padeceu sob Pôncio Pilatos, foi crucificado morto e sepultado; desceu à mansão dos mortos, ressuscitou ao terceiro dia; subiu aos céus, está sentado à direita de Deus Pai, Todo-poderoso, de onde há de vir a julgar os vivos e os mortos. Creio no Espírito Santo, na Santa Igreja Católica, na comunhão dos Santos, na remissão dos pecados, na ressurreição da carne, na vida eterna. Amém.', '40 segundos', '../../../assets/images/contaAveMaria.png');            
 
             -- Inserindo dados na tabela tercosMisterios - Agradecimento
             INSERT INTO tercosMisterios (title, descricao, imagem, tercosId) VALUES 

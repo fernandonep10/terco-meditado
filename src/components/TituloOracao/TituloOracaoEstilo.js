@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
     fontStyle: "normal",
     fontWeight: "400",
     lineHeight: 28,
+    textAlign: "center",
   },
 });
 
