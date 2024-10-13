@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Animated, Dimensions, Image, View } from "react-native";
+import { Dimensions, Image, View } from "react-native";
 import Carousel from "react-native-reanimated-carousel";
 import styles from "./TercoSliderEstilo";
 import { imagens } from "../../../assets/images/imagemMapeamento"; // Importe o mapeamento de imagens
@@ -17,25 +17,8 @@ export default function TercoSlider({ misterioAtual }) {
   const [currentIndex, setCurrentIndex] = useState(0); // Para rastrear o item atual
 
   const handleSnapToItem = (index) => {
-    //console.log(index);
+    console.log(index);
     // Atualizar o índice atual ao "snap"
-
-    console.log("-----");
-    console.log("ITEM ATUAL " + currentIndex);
-    console.log("NOVO ITEM " + index);
-
-    if (index == 0 && currentIndex == DATA.length - 1) {
-      r.current.scrollTo({ count: currentIndex, animated: true });
-      setCurrentIndex(currentIndex);
-      return;
-    }
-
-    if (index == DATA.length - 1 && currentIndex == 0) {
-      r.current.scrollTo({ index: currentIndex, animated: true });
-      setCurrentIndex(currentIndex);
-      console.log("teste");
-      return;
-    }
 
     setCurrentIndex(index);
   };
@@ -55,7 +38,6 @@ export default function TercoSlider({ misterioAtual }) {
         width={PAGE_WIDTH}
         height={PAGE_HEIGHT}
         data={DATA}
-        scrollAnimationDuration={200}
         maxScrollDistancePerSwipe={60} // Definindo para o tamanho do item em pixels
         renderItem={({ item }) => (
           <View style={{ justifyContent: "center", alignItems: "center" }}>
